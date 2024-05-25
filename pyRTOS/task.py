@@ -1,3 +1,4 @@
+import array
 
 # FreeRTOS states are
 #
