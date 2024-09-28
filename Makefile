@@ -3,7 +3,7 @@ MPY_CROSS = ./mpy-cross-linux-amd64-8.2.0-69-gfb57c0801.static
 
 # Order matters here.  Dependencies must come
 # before files that depend on them.
-SOURCES = pyRTOS/task.py pyRTOS/message.py pyRTOS/scheduler.py pyRTOS/pyRTOS.py pyRTOS/time_scheduler.py
+SOURCES = pyRTOS/task.py pyRTOS/message.py pyRTOS/scheduler.py pyRTOS/pyRTOS.py
 
 
 build/pyRTOS.mpy: build/pyRTOS.py
