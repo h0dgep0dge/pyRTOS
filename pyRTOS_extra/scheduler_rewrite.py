@@ -16,8 +16,8 @@ def time_scheduler(tasks):
                 running_task = task
             elif running_task.priority > task.priority:
                 running_task = task
-			elif task.state == pyRTOS.RUNNING:
-				running_task = task
+            elif task.state == pyRTOS.RUNNING:
+                running_task = task
 
     if running_task:
         running_task.state = pyRTOS.RUNNING
