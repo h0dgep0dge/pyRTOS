@@ -1,7 +1,7 @@
 import pyRTOS
 
 
-def time_scheduler(tasks):
+def default_scheduler_rewrite(tasks):
     messages = []
     running_task = None
 
