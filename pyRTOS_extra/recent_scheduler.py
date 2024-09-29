@@ -17,10 +17,21 @@ def recent_scheduler(tasks):
             elif running_task.priority > task.priority:
                 running_task = task
             elif running_task.priority == task.priority:
-                if id(running_task) in exec_history and id(task) in exec_history and \
-                   exec_history.index(id(task)) < exec_history.index(id(running_task)):
+                try:
+                    task_index = exec_history.index(id(task))
+                    task_in = True
+                except ValueError:
+                    task_in = False
+
+                try:
+                    running_task_index = exec_history.index(id(task))
+                    running_task_in = True
+                except ValueError:
+                    running_task_in = False
+                    
+                if running_task_in and task_in and task_index < running_task_index:
                     running_task = task
-                elif id(running_task) in exec_history and id(task) not in exec_history:
+                elif running_task_in and not task_in:
                     running_task = task
 
     if running_task:
